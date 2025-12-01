@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OCP\DiscountService.cs" />
+    <Compile Include="OCP\FestivalDiscount.cs" />
+    <Compile Include="OCP\IDiscount.cs" />
+    <Compile Include="OCP\NoDiscount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SRP\Invoice.cs" />

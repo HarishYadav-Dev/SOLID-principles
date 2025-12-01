@@ -1,4 +1,5 @@
-﻿using SOLID_Principles.SRP;
+﻿using SOLID_Principles.OCP;
+using SOLID_Principles.SRP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,10 @@ namespace SOLID_Principles
 			var invoice = new Invoice { Amount = 1000 };
 			var repo = new InvoiceRepository();
 			repo.SaveToDatabase(invoice);
+
+			Console.WriteLine("\n=== OCP ===");
+			var discountService = new DiscountService(new FestivalDiscount());
+			Console.WriteLine($"Final amount: {discountService.GetFinalAmount(1000)}");
 		}
 	}
 }
