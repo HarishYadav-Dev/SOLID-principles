@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LSP\AccountService.cs" />
+    <Compile Include="LSP\FixedDepositAccount.cs" />
+    <Compile Include="LSP\IBankAccount.cs" />
+    <Compile Include="LSP\IWithdrawableAccount.cs" />
+    <Compile Include="LSP\LSP Violation\AccountService.cs" />
+    <Compile Include="LSP\LSP Violation\BankAccount.cs" />
+    <Compile Include="LSP\LSP Violation\FixedDepositAccount.cs" />
+    <Compile Include="LSP\LSP Violation\SavingsAccount .cs" />
+    <Compile Include="LSP\SavingsAccount.cs" />
     <Compile Include="OCP\DiscountService.cs" />
     <Compile Include="OCP\FestivalDiscount.cs" />
     <Compile Include="OCP\IDiscount.cs" />

@@ -1,10 +1,7 @@
-﻿using SOLID_Principles.OCP;
+﻿using SOLID_Principles.LSP;
+using SOLID_Principles.OCP;
 using SOLID_Principles.SRP;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SOLID_Principles
 {
@@ -20,6 +17,32 @@ namespace SOLID_Principles
 			Console.WriteLine("\n=== OCP ===");
 			var discountService = new DiscountService(new FestivalDiscount());
 			Console.WriteLine($"Final amount: {discountService.GetFinalAmount(1000)}");
+
+			//Console.WriteLine("\n=== LSP Violation ===");
+			//AccountService service = new AccountService();
+
+			//BankAccount savings = new SavingsAccount();
+			//BankAccount fd = new FixedDepositAccount();
+
+			//service.ProcessWithdrawal(savings); // ✔ Works
+			//service.ProcessWithdrawal(fd);      // 💥 Runtime crash (LSP violation)
+
+			Console.WriteLine("\n=== Violation ===");
+			LSP.AccountService service = new LSP.AccountService();
+
+			IWithdrawableAccount savings = new LSP.SavingsAccount();
+			IBankAccount fd = new LSP.FixedDepositAccount();
+
+			service.Withdraw(savings); // ✔ Allowed
+
+			// service.Withdraw(fd);
+			//❌ Compile-time error — LSP protected
+
+			Console.ReadLine();
+
+
+
+
 		}
 	}
 }
