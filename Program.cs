@@ -1,4 +1,5 @@
-﻿using SOLID_Principles.LSP;
+﻿using SOLID_Principles.ISP;
+using SOLID_Principles.LSP;
 using SOLID_Principles.OCP;
 using SOLID_Principles.SRP;
 using System;
@@ -27,7 +28,7 @@ namespace SOLID_Principles
 			//service.ProcessWithdrawal(savings); // ✔ Works
 			//service.ProcessWithdrawal(fd);      // 💥 Runtime crash (LSP violation)
 
-			Console.WriteLine("\n=== Violation ===");
+			Console.WriteLine("\n=== LSP ===");
 			LSP.AccountService service = new LSP.AccountService();
 
 			IWithdrawableAccount savings = new LSP.SavingsAccount();
@@ -37,6 +38,11 @@ namespace SOLID_Principles
 
 			// service.Withdraw(fd);
 			//❌ Compile-time error — LSP protected
+
+			Console.WriteLine("\n=== ISP ===");
+			IEmailNotification emailNotification = new EmailNotificationService();
+			OrderService orderService = new OrderService(emailNotification);
+			orderService.PlaceOrder();
 
 			Console.ReadLine();
 

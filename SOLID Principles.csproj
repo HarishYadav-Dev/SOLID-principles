@@ -43,6 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISP\EmailNotificationService.cs" />
+    <Compile Include="ISP\IEmailNotification.cs" />
+    <Compile Include="ISP\IPushNotification.cs" />
+    <Compile Include="ISP\ISmsNotification.cs" />
+    <Compile Include="ISP\ISP Violation\EmailNotificationService.cs" />
+    <Compile Include="ISP\ISP Violation\INotificationService.cs" />
+    <Compile Include="ISP\OrderService.cs" />
+    <Compile Include="ISP\SmsNotificationService.cs" />
     <Compile Include="LSP\AccountService.cs" />
     <Compile Include="LSP\FixedDepositAccount.cs" />
     <Compile Include="LSP\IBankAccount.cs" />
