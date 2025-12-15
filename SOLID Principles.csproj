@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DIP\DIP Violation\OrderService.cs" />
+    <Compile Include="DIP\DIP Violation\SqlServerDatabase.cs" />
+    <Compile Include="DIP\IOrderRepository.cs" />
+    <Compile Include="DIP\OrderService.cs" />
+    <Compile Include="DIP\SqlOrderRepository.cs" />
     <Compile Include="ISP\EmailNotificationService.cs" />
     <Compile Include="ISP\IEmailNotification.cs" />
     <Compile Include="ISP\IPushNotification.cs" />

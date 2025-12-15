@@ -1,4 +1,5 @@
-﻿using SOLID_Principles.ISP;
+﻿using SOLID_Principles.DIP;
+using SOLID_Principles.ISP;
 using SOLID_Principles.LSP;
 using SOLID_Principles.OCP;
 using SOLID_Principles.SRP;
@@ -41,14 +42,15 @@ namespace SOLID_Principles
 
 			Console.WriteLine("\n=== ISP ===");
 			IEmailNotification emailNotification = new EmailNotificationService();
-			OrderService orderService = new OrderService(emailNotification);
+			ISP.OrderService orderService = new ISP.OrderService(emailNotification);
 			orderService.PlaceOrder();
 
+			Console.WriteLine("\n=== DIP ===");
+			IOrderRepository repository = new DIP.SqlOrderRepository();
+			DIP.OrderService order = new DIP.OrderService(repository);
+			order.PlaceOrder("Order001");
+
 			Console.ReadLine();
-
-
-
-
 		}
 	}
 }
